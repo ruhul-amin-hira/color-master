@@ -1,0 +1,455 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+@import "~bootstrap/scss/bootstrap";
+
+$primaryColor1: #558bee;
+$primaryColor2: #1d7fee;
+
+//Media Query All in One
+/*
+
+1em = 16px
+0-400px = 25em = small-phone
+400-450px = 28.13 = medium-phone
+450-600px = 37.5em = phone
+600-768 = 48em = tab-port
+768-915 = 57.19em = tab-land
+915-994 =62.126em = medium
+994-1200 = 75em = medium-big
+1920< = 120em = big-desktop
+*/
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint==small-phone {
+    @media (max-width: 25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==medium-phone {
+    @media (max-width: 28.13em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-port {
+    @media (max-width: 48em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-land {
+    @media (max-width: 57.19em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==medium {
+    @media (max-width: 62.13em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==medium-big {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==big-dektop {
+    @media (max-width: 120em) {
+      @content;
+    }
+  }
+}
+
+html {
+  font-size: 62.5%;
+
+  @include responsive(tab-port) {
+    font-size: 55%;
+  }
+  @include responsive(phone) {
+    font-size: 50%;
+  }
+}
+
+body {
+  background-color: white;
+  background-image: none;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.navcontainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid rgba(222, 222, 222, 0.5);
+  align-items: center;
+  background-color: white;
+  border-radius: 5rem;
+  margin-top: 2rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 600;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.navlink {
+  color: $primaryColor1;
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 0.6rem 2rem;
+  border-radius: 2rem;
+  margin: 0 1rem;
+  border: 1px solid transparent;
+  @include responsive(phone) {
+    margin: 0 0.5rem;
+    padding: 0.6rem 1.5rem;
+  }
+  &:hover {
+    text-decoration: none;
+    border-color: $primaryColor1;
+  }
+}
+
+a.selected-link {
+  background-color: $primaryColor2;
+  color: white;
+}
+
+.colorDash {
+  padding-top: 4rem;
+  &__con {
+    display: flex;
+    @include responsive(phone) {
+      flex-direction: column;
+    }
+  }
+}
+
+.colors_con {
+  width: 100%;
+  padding-left: 3rem;
+
+  &2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    justify-content: end;
+    align-content: center;
+    border: 2px solid rgba(195, 195, 195, 0.452);
+    border-radius: 2px;
+    overflow: hidden;
+
+    @include responsive(phone) {
+      padding-left: 0;
+      padding-top: 3rem;
+      justify-content: center;
+    }
+  }
+}
+
+.colorpicker_con {
+}
+.colorpicker_box {
+  @include responsive(phone) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.colors {
+  &__headerbox {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__copytext {
+    font-size: 1.5rem;
+    margin: 0;
+    color: rgb(107, 107, 107);
+  }
+}
+
+.singleColor {
+  width: 18rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  @include responsive(tab-port) {
+    width: 15rem;
+  }
+}
+
+.copytext {
+  font-size: 1.2rem;
+}
+.copytext2 {
+  font-size: 1.6rem;
+}
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}
+
+.colortex {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0.3rem 0;
+  padding: 0.1rem;
+  display: inline-block;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.colorHeader {
+  font-size: 2.8rem;
+  padding-bottom: 1rem;
+}
+
+.gradient {
+  padding-top: 2rem;
+
+  &__div {
+    position: relative;
+    height: 81vh;
+  }
+  &__utility {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+
+  &__colorbtn {
+    display: flex;
+  }
+  &__btn {
+    margin: 0 1.5rem;
+    border: none;
+    font-size: 1.6rem;
+    padding: 0.5rem 3rem;
+    border-radius: 1.8rem;
+    width: 15rem;
+    background-color: white;
+    &:hover {
+      box-shadow: 0 5px 10px rgb(149, 149, 149);
+    }
+  }
+
+  &__code {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+  }
+  &__cssheader {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+  }
+  &__csstext {
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    color: white;
+    max-width: 42rem;
+    font-family: "Ubuntu Mono", monospace;
+    background: rgba(198, 198, 198, 0.178);
+    box-shadow: 0 5px 10px 0 rgba(31, 38, 135, 0.281);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-weight: 700;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__headertext {
+    font-size: 4rem;
+    margin-bottom: 5rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    text-shadow: -1px 3px 2px rgba(0, 0, 0, 0.3);
+    color: white;
+  }
+
+  &__arrowbox {
+    padding-bottom: 2rem;
+    display: flex;
+  }
+
+  &__arrowicon {
+    font-size: 1.8rem;
+    color: black;
+    color: white;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    margin: 0 1rem;
+    display: flex;
+    height: 3.4rem;
+    width: 3.4rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.icon-border {
+  border-color: white;
+}
+.toRightTop {
+  transform: rotate(135deg);
+}
+.toRight {
+  transform: rotate(180deg);
+}
+
+.toRightBottom {
+  transform: rotate(225deg);
+}
+
+.toBottom {
+  transform: rotate(270deg);
+}
+
+.toLeftBottom {
+  transform: rotate(315deg);
+}
+
+.toLeftTop {
+  transform: rotate(45deg);
+}
+.toTop {
+  transform: rotate(90deg);
+}
+
+.colorbtn {
+  position: relative;
+  //width: 100%;
+  &__picker {
+    position: absolute;
+    top: 1%;
+    transform: translate(40%, -105%);
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 1rem 1rem;
+  flex-direction: column;
+  &__text {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  &__link {
+    color: rgb(32, 32, 32);
+    font-size: 2.5rem;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    width: 6rem;
+    height: 6rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border-radius: 50%;
+    background: rgba(198, 198, 198, 0.178);
+    box-shadow: 0 5px 10px 0 rgba(31, 38, 135, 0.281);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    // border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+.copied {
+  padding-top: 4rem;
+  &__colorcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+  &__header {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 2rem 0;
+  }
+  &__colorbox {
+    width: 8rem;
+    height: 8rem;
+    // background-color: black;
+    border-radius: 50%;
+    align-self: center;
+    margin-right: 2rem;
+    box-shadow: 0 2px 3px rgba(156, 156, 156, 0.459);
+  }
+  &__colorindex {
+    width: 90%;
+    height: 10rem;
+    align-self: center;
+    border-radius: 0.8rem;
+    background-color: rgb(35, 38, 44);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem 3rem;
+  }
+  &__codecolorText {
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: rgb(255, 174, 0);
+    margin: 0;
+  }
+  &__codecolor {
+    color: rgb(13, 195, 219);
+    display: inline-block;
+    padding-right: 1rem;
+  }
+  &__notext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
