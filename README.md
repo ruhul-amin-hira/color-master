@@ -1,3 +1,12 @@
+
+# Color Master App
+## See Live Project on vercel
+(https://color-master-ruhul-amin-hira.vercel.app/) .\
+**Generate any color, copy to clipboard, gradient, CSS code**
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
