@@ -146,12 +146,8 @@ a.selected-link {
   &2 {
     display: flex;
     flex-wrap: wrap;
-    margin-left: auto;
-    justify-content: end;
-    align-content: center;
     border: 2px solid rgba(195, 195, 195, 0.452);
     border-radius: 2px;
-    overflow: hidden;
 
     @include responsive(phone) {
       padding-left: 0;
@@ -183,16 +179,13 @@ a.selected-link {
 }
 
 .singleColor {
-  width: 18rem;
+  flex: 1 0 20rem;
   height: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-self: center;
-  @include responsive(tab-port) {
-    width: 15rem;
-  }
 }
 
 .copytext {
